@@ -19,6 +19,7 @@ const fleetPreview = [
     ageRequirement: "21+ years",
     description: "Perfect for city driving and budget-conscious travelers.",
     isPopular: true,
+    carType: "economy",
   },
   {
     name: "Hyundai Accent or similar",
@@ -29,6 +30,7 @@ const fleetPreview = [
     mpg: "27-35",
     ageRequirement: "21+ years",
     description: "Comfortable and efficient for longer trips.",
+    carType: "compact",
   },
   {
     name: "Hyundai Elantra or similar",
@@ -39,6 +41,7 @@ const fleetPreview = [
     mpg: "33-43",
     ageRequirement: "21+ years",
     description: "Spacious interior with excellent fuel economy.",
+    carType: "midsize",
   },
 ];
 

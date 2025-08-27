@@ -25,22 +25,24 @@ export function BookingForm() {
   };
 
   return (
-    <Card className="card-elegant booking-shadow p-6 mx-auto max-w-6xl -mt-16 relative z-10 bg-background">
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-foreground mb-2">Find Your Perfect Car</h2>
-          <p className="text-muted-foreground">Choose from our extensive fleet of modern vehicles</p>
+    <Card className="card-elegant max-w-6xl mx-auto -mt-20 relative z-10 bg-background/95 backdrop-blur-sm border-0 shadow-2xl">
+      <form onSubmit={handleSubmit} className="p-8">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-foreground mb-3">Find Your Perfect Car</h2>
+          <p className="text-lg text-muted-foreground">Choose from our extensive fleet of modern vehicles</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {/* Pickup Location */}
-          <div className="space-y-2">
-            <Label htmlFor="pickup-location" className="flex items-center gap-2 font-semibold">
-              <MapPin className="h-4 w-4 text-primary" />
+          <div className="space-y-3">
+            <Label htmlFor="pickup-location" className="flex items-center gap-3 font-semibold text-base">
+              <div className="bg-primary/10 p-2 rounded-lg">
+                <MapPin className="h-5 w-5 text-primary" />
+              </div>
               Pickup Location
             </Label>
             <Select value={pickupLocation} onValueChange={setPickupLocation}>
-              <SelectTrigger className="h-12">
+              <SelectTrigger className="h-14 text-base rounded-xl border-2 hover:border-primary/30 transition-colors">
                 <SelectValue placeholder="Select location" />
               </SelectTrigger>
               <SelectContent>
@@ -53,13 +55,15 @@ export function BookingForm() {
           </div>
 
           {/* Car Type */}
-          <div className="space-y-2">
-            <Label htmlFor="car-type" className="flex items-center gap-2 font-semibold">
-              <Car className="h-4 w-4 text-primary" />
+          <div className="space-y-3">
+            <Label htmlFor="car-type" className="flex items-center gap-3 font-semibold text-base">
+              <div className="bg-primary/10 p-2 rounded-lg">
+                <Car className="h-5 w-5 text-primary" />
+              </div>
               Car Type
             </Label>
             <Select value={carType} onValueChange={setCarType}>
-              <SelectTrigger className="h-12">
+              <SelectTrigger className="h-14 text-base rounded-xl border-2 hover:border-primary/30 transition-colors">
                 <SelectValue placeholder="Select car type" />
               </SelectTrigger>
               <SelectContent>
@@ -73,9 +77,11 @@ export function BookingForm() {
           </div>
 
           {/* Pickup Date */}
-          <div className="space-y-2">
-            <Label htmlFor="pickup-date" className="flex items-center gap-2 font-semibold">
-              <Calendar className="h-4 w-4 text-primary" />
+          <div className="space-y-3">
+            <Label htmlFor="pickup-date" className="flex items-center gap-3 font-semibold text-base">
+              <div className="bg-primary/10 p-2 rounded-lg">
+                <Calendar className="h-5 w-5 text-primary" />
+              </div>
               Pickup Date
             </Label>
             <Input
@@ -83,15 +89,17 @@ export function BookingForm() {
               type="date"
               value={pickupDate}
               onChange={(e) => setPickupDate(e.target.value)}
-              className="h-12"
+              className="h-14 text-base rounded-xl border-2 hover:border-primary/30 transition-colors"
               min={new Date().toISOString().split('T')[0]}
             />
           </div>
 
           {/* Return Date */}
-          <div className="space-y-2">
-            <Label htmlFor="return-date" className="flex items-center gap-2 font-semibold">
-              <Clock className="h-4 w-4 text-primary" />
+          <div className="space-y-3">
+            <Label htmlFor="return-date" className="flex items-center gap-3 font-semibold text-base">
+              <div className="bg-primary/10 p-2 rounded-lg">
+                <Clock className="h-5 w-5 text-primary" />
+              </div>
               Return Date
             </Label>
             <Input
@@ -99,20 +107,20 @@ export function BookingForm() {
               type="date"
               value={returnDate}
               onChange={(e) => setReturnDate(e.target.value)}
-              className="h-12"
+              className="h-14 text-base rounded-xl border-2 hover:border-primary/30 transition-colors"
               min={pickupDate || new Date().toISOString().split('T')[0]}
             />
           </div>
         </div>
 
-        <div className="flex justify-center pt-4">
+        <div className="flex justify-center">
           <Button 
             type="submit" 
             variant="accent" 
             size="xl"
-            className="px-12"
+            className="h-16 px-16 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
-            Search Available Cars
+            Search & Book
           </Button>
         </div>
       </form>

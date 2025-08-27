@@ -59,10 +59,17 @@ export function Header() {
           ))}
         </div>
         
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Button variant="hero" size="lg">
-            Book Now
-          </Button>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
+          <Link to="/login">
+            <Button variant="outline" size="lg">
+              Sign In
+            </Button>
+          </Link>
+          <Link to="/register">
+            <Button variant="accent" size="lg">
+              Sign Up
+            </Button>
+          </Link>
         </div>
       </nav>
       
@@ -107,10 +114,17 @@ export function Header() {
                     </Link>
                   ))}
                 </div>
-                <div className="py-6">
-                  <Button variant="hero" size="lg" className="w-full">
-                    Book Now
-                  </Button>
+                <div className="py-6 space-y-3">
+                  <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
+                    <Button variant="outline" size="lg" className="w-full">
+                      Sign In
+                    </Button>
+                  </Link>
+                  <Link to="/register" onClick={() => setMobileMenuOpen(false)}>
+                    <Button variant="accent" size="lg" className="w-full">
+                      Sign Up
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

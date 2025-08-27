@@ -1,4 +1,5 @@
 import { Users, Fuel, Settings, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +15,7 @@ interface CarCardProps {
   description: string;
   features?: string[];
   isPopular?: boolean;
+  carType?: string;
 }
 
 export function CarCard({
@@ -27,6 +29,7 @@ export function CarCard({
   description,
   features = [],
   isPopular = false,
+  carType,
 }: CarCardProps) {
   return (
     <Card className="card-elegant h-full flex flex-col relative overflow-hidden">
@@ -90,9 +93,17 @@ export function CarCard({
       </CardContent>
 
       <CardFooter className="p-6 pt-0">
-        <Button variant="hero" size="lg" className="w-full">
-          Book Now
-        </Button>
+        {carType ? (
+          <Link to={`/car/${carType}`} className="w-full">
+            <Button variant="hero" size="lg" className="w-full">
+              View Details
+            </Button>
+          </Link>
+        ) : (
+          <Button variant="hero" size="lg" className="w-full">
+            Book Now
+          </Button>
+        )}
       </CardFooter>
     </Card>
   );
