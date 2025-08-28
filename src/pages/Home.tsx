@@ -91,7 +91,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Find Your Perfect
-              <span className="block text-blue-500"> Rental Car</span>
+              <span className="block text-green-500"> Rental Car</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed">
               Discover our premium fleet of modern vehicles for every journey. 
