@@ -87,7 +87,7 @@ export default function Home() {
         style={{ backgroundImage: `url(${heroBanner})` }}
       >
         <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center" style={{ marginTop: '-50px' }}>
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Find Your Perfect
