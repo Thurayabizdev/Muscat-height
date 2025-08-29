@@ -4,9 +4,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BookingForm } from "@/components/BookingForm";
 import { CarCard } from "@/components/CarCard";
 import heroBanner from "@/assets/hero-banner.jpg";
-import economyCar from "@/assets/car/Chevrolet_Spark_.webp";
-import compactCar from "@/assets/car/Hyundai_Accent_.webp";
-import midsizeCar from "@/assets/car/Hyundai_Elantra_.webp";
+import economyCar from "@/assets/economy-car.jpg";
+import compactCar from "@/assets/compact-car.jpg";
+import midsizeCar from "@/assets/midsize-car.jpg";
 
 const fleetPreview = [
   {
