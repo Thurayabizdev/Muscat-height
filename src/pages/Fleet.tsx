@@ -1,9 +1,9 @@
 import { CarCard } from "@/components/CarCard";
-import economyCar from "@/assets/economy-car.jpg";
-import compactCar from "@/assets/compact-car.jpg";
-import midsizeCar from "@/assets/midsize-car.jpg";
-import fullsizeCar from "@/assets/fullsize-car.jpg";
-import midsizeSuv from "@/assets/midsize-suv.jpg";
+import economyCar from "@/assets/car/Chevrolet_Spark_.webp";
+import compactCar from "@/assets/car/Hyundai_Accent_.webp";
+import midsizeCar from "@/assets/car/Hyundai_Elantra_.webp";
+import fullsizeCar from "@/assets/car/Nissan_Altima_.webp";
+import midsizeSuv from "@/assets/car/Hyundai_Tucson_.webp";
 
 const vehicles = [
   {

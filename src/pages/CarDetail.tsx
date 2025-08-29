@@ -7,11 +7,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import economyCar from "@/assets/economy-car.jpg";
-import compactCar from "@/assets/compact-car.jpg";
-import midsizeCar from "@/assets/midsize-car.jpg";
-import fullsizeCar from "@/assets/fullsize-car.jpg";
-import midsizeSuv from "@/assets/midsize-suv.jpg";
+import economyCar from "@/assets/car/Chevrolet_Spark_.webp";
+import compactCar from "@/assets/car/Hyundai_Accent_.webp";
+import midsizeCar from "@/assets/car/Hyundai_Elantra_.webp";
+import fullsizeCar from "@/assets/car/Nissan_Altima_.webp";
+import midsizeSuv from "@/assets/car/Hyundai_Tucson_.webp";
 
 const carData = {
   economy: {
@@ -166,7 +166,7 @@ export default function CarDetail() {
       {/* Split Screen Layout */}
       <div className="grid lg:grid-cols-2 min-h-screen">
         {/* Left Side - Car Image */}
-        <div className="relative h-96 lg:h-screen">
+        <div className="relative h-64 sm:h-96 lg:h-screen">
           <img 
             src={car.image} 
             alt={car.name}
@@ -176,9 +176,9 @@ export default function CarDetail() {
         </div>
 
         {/* Right Side - Booking Dashboard */}
-        <div className="p-6 lg:p-12 flex flex-col justify-center bg-background">
+        <div className="p-4 sm:p-6 lg:p-12 flex flex-col justify-center bg-background">
           <Card className="card-elegant">
-            <CardContent className="p-8">
+            <CardContent className="p-4 sm:p-6 lg:p-8">
               <h1 className="text-2xl font-bold text-foreground mb-6">Book Your Rental</h1>
               
               <div className="space-y-6">
@@ -263,7 +263,7 @@ export default function CarDetail() {
       </div>
 
       {/* Content Below */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         {/* Car Details */}
         <section className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -273,7 +273,7 @@ export default function CarDetail() {
             {car.description}
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8">
             <div className="text-center">
               <Users className="h-8 w-8 text-primary mx-auto mb-2" />
               <div className="font-semibold">{car.seats} Seats</div>
@@ -311,8 +311,8 @@ export default function CarDetail() {
         <section className="mb-16">
           <h3 className="text-2xl font-bold text-foreground mb-8">Review</h3>
           <Card className="card-elegant">
-            <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
+            <CardContent className="p-4 sm:p-6 lg:p-8">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center">
                 <img 
                   src={car.image} 
                   alt={car.name}
@@ -339,7 +339,7 @@ export default function CarDetail() {
         {/* Discover More Options */}
         <section className="mb-16">
           <h3 className="text-2xl font-bold text-foreground mb-8">Discover More Options</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {relatedCars.map(([key, relatedCar]) => (
               <Link key={key} to={`/car/${key}`}>
                 <Card className="card-elegant hover-scale cursor-pointer">
@@ -365,11 +365,11 @@ export default function CarDetail() {
           <div className="space-y-4">
             {car.faq.map((item, index) => (
               <Collapsible key={index}>
-                <CollapsibleTrigger className="flex items-center justify-between w-full p-6 bg-card rounded-lg hover:bg-muted/30 transition-colors">
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 sm:p-6 bg-card rounded-lg hover:bg-muted/30 transition-colors">
                   <span className="font-semibold text-left">{item.question}</span>
                   <ChevronDown className="h-5 w-5 text-muted-foreground" />
                 </CollapsibleTrigger>
-                <CollapsibleContent className="p-6 pt-0">
+                <CollapsibleContent className="p-4 sm:p-6 pt-0">
                   <p className="text-muted-foreground">{item.answer}</p>
                 </CollapsibleContent>
               </Collapsible>
